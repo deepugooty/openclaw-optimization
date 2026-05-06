@@ -15,15 +15,64 @@ def extract_code(text):
 
 TASKS = [
     ("task1_hello",
-     "Create a Python file that prints Hello World",
+     """Task: Print Hello World
+Requirement:
+- Create a Python file
+- Print exactly: Hello World
+Output:
+- Complete Python code""",
      "hello.py"),
+
     ("task2_two_sum",
-     "Write a function that finds two numbers in a list that sum to a target",
+     """Task: Two Sum
+Requirement: Create a Python file
+Input:
+  nums: list[int]
+  target: int
+Output:
+  indices of two numbers such that nums[i] + nums[j] = target
+Constraints:
+  exactly one solution
+  cannot use same element twice
+  return indices in any order
+Example: nums = [2,7,11,15], target = 9 → [0,1]""",
      "two_sum.py"),
+
     ("task3_refactor",
-     "Refactor this function to handle edge cases and add unit tests:\n\ndef find_max(numbers):\n    max_val = numbers[0]\n    return max_val",
-     "find_max.py")
+     """Task: Refactor, Optimize, and Test Python Function
+Objectives:
+1. Fix logical bugs
+2. Prevent using the same index twice
+3. Handle edge cases
+4. Improve readability and structure
+5. Optimize time complexity (target: O(n))
+6. Add unit tests
+
+Input Code:
+def find_pair(nums, target):
+    for i in range(len(nums)):
+        for j in range(len(nums)):
+            if nums[i] + nums[j] == target:
+                return i, j
+
+Requirements:
+- Return tuple (i, j) where i != j
+- Return None if no valid pair exists
+- Handle edge cases: empty list, list with one element, duplicate values, negative numbers
+- Use efficient approach (hash map preferred)
+
+Testing:
+- Use pytest
+- Include at least 5 test cases: normal case, no solution, duplicate numbers, negative numbers, small input edge case
+
+Output Format:
+1. Refactored function
+2. Explanation (brief, max 5 lines)
+3. Test cases (pytest)""",
+     "find_pair.py")
 ]
+
+baseline = {"task1_hello": 0, "task2_two_sum": 0, "task3_refactor": 0}
 
 def run_benchmark(think_mode, output_subdir, log_subdir):
     OUTPUT_DIR = os.path.expanduser(f"~/Desktop/saideepi/openclaw-optimization/output/{output_subdir}")
@@ -33,7 +82,7 @@ def run_benchmark(think_mode, output_subdir, log_subdir):
 
     label = "WITH Thinking" if think_mode else "WITHOUT Thinking"
     print(f"\n{'='*55}")
-    print(f"BASELINE — Ollama Direct — {label}")
+    print(f"ITERATION 1 — Optimized Prompts — {label}")
     print(f"Output: {OUTPUT_DIR}")
     print(f"{'='*55}")
 
@@ -90,29 +139,21 @@ def run_benchmark(think_mode, output_subdir, log_subdir):
             "quality": quality
         })
 
-    print(f"\n{'='*55}")
-    print(f"SUMMARY — {label}")
-    print(f"{'='*55}")
-    print(f"{'Task':<20} {'Median':<10} {'Tok/s':<10} {'Out Tok':<10} {'Quality'}")
-    print("-"*60)
-    for r in results:
-        print(f"{r['task']:<20} {r['median_s']:<10} {r['tok_per_sec']:<10} {r['output_tokens']:<10} {r['quality']}")
-
     with open(f"{LOG_DIR}/results.json", "w") as f:
         json.dump(results, f, indent=2)
-    print(f"\nSaved to {LOG_DIR}/results.json")
+
     return results
 
 # Run both modes
 print("\n🔵 Running WITHOUT thinking mode...")
-results_no_think = run_benchmark(False, "baseline_ollama/no_thinking", "baseline_ollama/no_thinking")
+results_no_think = run_benchmark(False, "iter1/no_thinking", "iter1/no_thinking")
 
 print("\n\n🟡 Running WITH thinking mode...")
-results_think = run_benchmark(True, "baseline_ollama/thinking", "baseline_ollama/thinking")
+results_think = run_benchmark(True, "iter1/thinking", "iter1/thinking")
 
 # Comparison
 print(f"\n{'='*65}")
-print("THINKING vs NON-THINKING COMPARISON")
+print("ITER1 — THINKING vs NON-THINKING")
 print(f"{'='*65}")
 print(f"{'Task':<20} {'No Think (s)':<15} {'Think (s)':<15} {'Overhead'}")
 print("-"*65)

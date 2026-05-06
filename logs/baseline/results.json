@@ -1,0 +1,15 @@
+{
+  "model": "qwen3.5:0.8b",
+  "quantization": "Q8_0",
+  "date": "2026-05-04",
+  "ollama_direct": [
+    {"task": "task1_hello", "median_s": 9.43, "tok_per_sec": 15.4, "output_tokens": 95, "runs": [9.43, 8.19, 11.52]},
+    {"task": "task2_two_sum", "median_s": 274.76, "tok_per_sec": 15.3, "output_tokens": 4170, "runs": [82.53, 274.76, 304.37]},
+    {"task": "task3_refactor", "median_s": 356.28, "tok_per_sec": 13.1, "output_tokens": 4570, "runs": [356.28]}
+  ],
+  "openclaw_wall_clock": [
+    {"task": "task1_hello", "wall_clock_s": 58, "tool_calls": 2, "status": "success"},
+    {"task": "task2_two_sum", "wall_clock_s": 180, "tool_calls": 4, "status": "success"},
+    {"task": "task3_refactor", "wall_clock_s": 840, "tool_calls": 14, "status": "partial"}
+  ]
+}

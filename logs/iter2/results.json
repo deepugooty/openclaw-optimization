@@ -1,0 +1,35 @@
+[
+  {
+    "task": "task1_hello",
+    "median_s": 1.72,
+    "baseline_s": 15.68,
+    "iter1_s": 3.49,
+    "improvement_pct": 89.1,
+    "tok_per_sec": 28.6,
+    "output_tokens": 11,
+    "prompt_tokens": 41,
+    "quality": "\u2705 runs"
+  },
+  {
+    "task": "task2_two_sum",
+    "median_s": 8.31,
+    "baseline_s": 79.47,
+    "iter1_s": 8.2,
+    "improvement_pct": 89.5,
+    "tok_per_sec": 26.8,
+    "output_tokens": 206,
+    "prompt_tokens": 106,
+    "quality": "\u2705 runs"
+  },
+  {
+    "task": "task3_refactor",
+    "median_s": 15.64,
+    "baseline_s": 356.28,
+    "iter1_s": 20.49,
+    "improvement_pct": 95.6,
+    "tok_per_sec": 26.7,
+    "output_tokens": 400,
+    "prompt_tokens": 179,
+    "quality": "\u274c   File \"/Users/krishna/Desktop/saideepi/openclaw-optimization/output/iter2/ollam"
+  }
+]

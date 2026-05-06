@@ -1,0 +1,35 @@
+[
+  {
+    "task": "task1_hello",
+    "median_s": 3.49,
+    "baseline_s": 15.68,
+    "improvement_pct": 77.7,
+    "tok_per_sec": 23.6,
+    "output_tokens": 61,
+    "prompt_tokens": 39,
+    "output_file": "/Users/krishna/Desktop/saideepi/openclaw-optimization/output/iter1/ollama/hello.py",
+    "quality": "\u2705 runs"
+  },
+  {
+    "task": "task2_two_sum",
+    "median_s": 16.0,
+    "baseline_s": 79.47,
+    "improvement_pct": 79.9,
+    "tok_per_sec": 26.4,
+    "output_tokens": 400,
+    "prompt_tokens": 104,
+    "output_file": "/Users/krishna/Desktop/saideepi/openclaw-optimization/output/iter1/ollama/two_sum.py",
+    "quality": "\u2705 runs"
+  },
+  {
+    "task": "task3_refactor",
+    "median_s": 18.05,
+    "baseline_s": 356.28,
+    "improvement_pct": 94.9,
+    "tok_per_sec": 23.8,
+    "output_tokens": 400,
+    "prompt_tokens": 240,
+    "output_file": "/Users/krishna/Desktop/saideepi/openclaw-optimization/output/iter1/ollama/find_pair.py",
+    "quality": "\u2705 runs"
+  }
+]
