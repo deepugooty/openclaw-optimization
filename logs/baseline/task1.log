@@ -1,2 +1,0 @@
-zsh: command not found: openclaw
-openclaw agent --message "$(cat tasks/task${i}.txt)" --thinking low  0.00s user 0.00s system 71% cpu 0.002 total
