@@ -1,0 +1,29 @@
+[
+  {
+    "task": "task1_hello",
+    "think": false,
+    "median_s": 1.25,
+    "tok_per_sec": 15.0,
+    "output_tokens": 11,
+    "prompt_tokens": 23,
+    "quality": "\u2705 runs"
+  },
+  {
+    "task": "task2_two_sum",
+    "think": false,
+    "median_s": 27.21,
+    "tok_per_sec": 11.5,
+    "output_tokens": 360,
+    "prompt_tokens": 30,
+    "quality": "\u2705 runs"
+  },
+  {
+    "task": "task3_refactor",
+    "think": false,
+    "median_s": 29.78,
+    "tok_per_sec": 14.2,
+    "output_tokens": 400,
+    "prompt_tokens": 48,
+    "quality": "\u2705 runs"
+  }
+]
